@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body{
+	margin: 0;
+	padding: 0;
+	font-family: Roboto;
+	font-size: 20px;
+	color: #2F343B;
+}
+
+a{
+	color: #348899;
+	text-decoration: none;
+}
+
+a:hover{
+	color: #F2EBC7;
+}
+
+a:visited{
+	color: none;
+}
+
+li{
+	list-style: none;
+}
+
+.head{
+	padding: 10px 60px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #343642;
+}
+
+.head-logo{
+	max-width: 200px;
+	display: inline-block;
+	padding: 10px;
+}
+
+.head-logo:hover{
+	border-top: 1px solid #F2EBC7;
+	border-bottom: 1px solid #F2EBC7;
+	background-color: #703030;
+}
+
+.menu{
+	margin-left: 40px;
+	display: inline-block;
+}
+
+.menu ul li:first-child{
+	margin-left: 0;
+}
+
+.menu ul li{
+	margin-left: 20px;
+	display: inline-block;
+}
+
+.main{
+	width: 100%;
+}
+
+.found-block{
+	height: 100px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	padding: 80px 60px;
+	color: white;
+	background-color: #2F343B;
+}
+
+.found-bottom ul li{
+	display: inline-block;
+	color: white;
+	margin-left: 40px;
+}
+
+.found-bottom .active{
+	border-bottom: 4px solid #348899;
+}
+
+.found-bottom a{
+	color: white;
+}
+
+.found-bottom ul li:first-child{
+	margin-left: 0;
+}
+
+.found-bottom{
+	position: absolute;
+	top: 296px;
+	left: 21px;
+}
