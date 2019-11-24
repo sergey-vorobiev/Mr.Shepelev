@@ -177,141 +177,6 @@
 						</div>
 					</footer>
 				</div>
-				<div class="music-block">
-					<a href="#"><span>Italo Disco</span></a>
-					<a href="#"><img src="images/img_albume1.jpg" alt=""></a>
-					<footer>
-						<div class="canvas"></div>
-						<div class="name">
-							<a href="#">Last In Space</a>
-						</div>
-						<div class="autor">
-							<a href="#">Mr. Shepelev</a>
-						</div>
-						<div class="info">
-							<div class="info-block">
-								<i class="fas fa-play"></i>
-								<span>24.2k</span>
-							</div>
-							<div class="info-block">
-								<i class="fas fa-heart"></i>
-								<span>251</span>
-							</div>
-							<div class="info-block">
-								<i class="fas fa-comment-alt"></i>
-								<span>12</span>
-							</div>
-						</div>
-					</footer>
-				</div>
-				<div class="music-block">
-					<a href="#"><span>Italo Disco</span></a>
-					<a href="#"><img src="images/img_albume2.jpg" alt=""></a>
-					<footer>
-						<div class="canvas"></div>
-						<div class="name">
-							<a href="#">Footer Lorem</a>
-						</div>
-						<div class="autor">
-							<a href="#">Mr. Shepelev</a>
-						</div>
-						<div class="info">
-							<div class="info-block">
-								<i class="fas fa-play"></i>
-								<span>12.6k</span>
-							</div>
-							<div class="info-block">
-								<i class="fas fa-heart"></i>
-								<span>149</span>
-							</div>
-							<div class="info-block">
-								<i class="fas fa-comment-alt"></i>
-								<span>9</span>
-							</div>
-						</div>
-					</footer>
-				</div>
-				<div class="music-block">
-					<a href="#"><span>Italo Disco</span></a>
-					<a href="#"><img src="images/img_albume3.jpg" alt=""></a>
-					<footer>
-						<div class="canvas"></div>
-						<div class="name">
-							<a href="#">Kartocha</a>
-						</div>
-						<div class="autor">
-							<a href="#">Mr. Shepelev</a>
-						</div>
-						<div class="info">
-							<div class="info-block">
-								<i class="fas fa-play"></i>
-								<span>74.2k</span>
-							</div>
-							<div class="info-block">
-								<i class="fas fa-heart"></i>
-								<span>1451</span>
-							</div>
-							<div class="info-block">
-								<i class="fas fa-comment-alt"></i>
-								<span>67</span>
-							</div>
-						</div>
-					</footer>
-				</div>
-				<div class="music-block">
-					<a href="#"><span>Italo Disco</span></a>
-					<a href="#"><img src="images/img_albume4.jpg" alt=""></a>
-					<footer>
-						<div class="canvas"></div>
-						<div class="name">
-							<a href="#">You Love in this Music</a>
-						</div>
-						<div class="autor">
-							<a href="#">Mr. Shepelev</a>
-						</div>
-						<div class="info">
-							<div class="info-block">
-								<i class="fas fa-play"></i>
-								<span>59.5k</span>
-							</div>
-							<div class="info-block">
-								<i class="fas fa-heart"></i>
-								<span>522</span>
-							</div>
-							<div class="info-block">
-								<i class="fas fa-comment-alt"></i>
-								<span>45</span>
-							</div>
-						</div>
-					</footer>
-				</div>
-				<div class="music-block">
-					<a href="#"><span>Italo Disco</span></a>
-					<a href="#"><img src="images/img_albume5.jpg" alt=""></a>
-					<footer>
-						<div class="canvas"></div>
-						<div class="name">
-							<a href="#">Karate</a>
-						</div>
-						<div class="autor">
-							<a href="#">Mr. Shepelev</a>
-						</div>
-						<div class="info">
-							<div class="info-block">
-								<i class="fas fa-play"></i>
-								<span>10.1k</span>
-							</div>
-							<div class="info-block">
-								<i class="fas fa-heart"></i>
-								<span>144</span>
-							</div>
-							<div class="info-block">
-								<i class="fas fa-comment-alt"></i>
-								<span>6</span>
-							</div>
-						</div>
-					</footer>
-				</div>
 			</div>
 		</div>
 	</div>
@@ -334,7 +199,21 @@
 			</div>
 		</div>
 	</div>
-	
+
+	<!-- audioPlayer -->
+	<audio id="music" preload="true">
+		<source src="audio/music.mp3">
+	</audio>
+	<div class="container-audioplayer">
+		<div class="audioplayer">
+			<button id="pButton" class="play"></button>
+			<div id="timeline" class="timeline">    
+				<div id="playhead" class="playhead"></div>
+			</div>
+		</div>
+	</div>
+	<!-- <div class="visible-audioplayer"></div> -->
+
 	<script src="js/main.js"></script>
 </body>
 </html>
