@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="css/style.css">
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
-<body>
+<body onload="init()">
 
 	<!-- HEAD -->
 
@@ -237,11 +237,31 @@
 	</audio>
 	<div id="audioplayer" class="container-audioplayer">
 		<div class="audioplayer">
+			<div class="audioplayer-album-img">
+				<img src="#" alt="">
+			</div>
 			<button id="nextButton" class="previous"></button>
 			<button id="pButton" class="play"></button>
 			<button id="preButton" class="next"></button>
-			<div id="timeline" class="timeline">    
-				<div id="playhead" class="playhead"></div>
+
+			<div class="main-time-line">
+				<div class="info-music">
+					<div class="left-content">
+						<a href="#">Footer Lorem</a>
+						<span>от:</span>
+						<a href="#">Mr.Shepelev</a>
+					</div>
+					<div class="right-content">
+						<!-- <i>Ссылка на альбом</i> -->
+					</div>
+				</div>
+				<div class="audio-line-info">
+						<span>00:00</span>
+					<div id="timeline" class="timeline">
+						<div id="playhead" class="playhead"></div>
+					</div>
+						<span>02:25</span>
+				</div>
 			</div>
 		</div>
 	</div>

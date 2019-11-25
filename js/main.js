@@ -3,13 +3,15 @@ var audioplayer = document.getElementById('audioplayer');
 
 // При загрузке страницы проверяем:
 // * видимость audioplayer
+
+function init(){
     if(audioplayer.style.display == "none"){
-        audioplayer.style.display = 'flex';
-        closeButton.className = "close visible-audioplayer";
-    }else{
-        audioplayer.style.display = 'none';
+        closeButton.className = "open visible-audioplayer";
+    }else if(audioplayer.style.display == "flex"){
         closeButton.className = "open visible-audioplayer";
     }
+}
+
 
 closeButton.onclick = function(){
     if(audioplayer.style.display == "none"){
@@ -32,7 +34,7 @@ var pButton = document.getElementById('pButton');
 var playhead = document.getElementById('playhead');
 var timeline = document.getElementById('timeline');
 
-var timelineWidth = timeline.offsetWidth - playhead.offsetWidth - 4;
+var timelineWidth = timeline.offsetWidth - playhead.offsetWidth - 1.8;
 
 // play button event listenter
 pButton.addEventListener("click", play);
