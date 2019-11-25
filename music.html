@@ -44,7 +44,13 @@
 			<div class="music-container">
 				<div class="music-block">
 					<a href="#"><span>Italo Disco</span></a>
-					<a href="#"><img src="images/img_albume1.jpg" alt=""></a>
+					<div class="music-block-img">
+						<a href="#">
+							<img src="images/img_albume1.jpg" alt="">
+							<div class="shadow-for-img"></div>
+							<div class="nav-music-block-img play-in-block"></div>
+						</a>
+					</div>
 					<footer>
 						<div class="canvas"></div>
 						<div class="name">
@@ -71,7 +77,13 @@
 				</div>
 				<div class="music-block">
 					<a href="#"><span>Italo Disco</span></a>
-					<a href="#"><img src="images/img_albume2.jpg" alt=""></a>
+					<div class="music-block-img">
+						<a href="#">
+							<img src="images/img_albume2.jpg" alt="">
+							<div class="shadow-for-img"></div>
+							<div class="nav-music-block-img play-in-block"></div>
+						</a>
+					</div>
 					<footer>
 						<div class="canvas"></div>
 						<div class="name">
@@ -98,7 +110,13 @@
 				</div>
 				<div class="music-block">
 					<a href="#"><span>Italo Disco</span></a>
-					<a href="#"><img src="images/img_albume3.jpg" alt=""></a>
+					<div class="music-block-img">
+						<a href="#">
+							<img src="images/img_albume3.jpg" alt="">
+							<div class="shadow-for-img"></div>
+							<div class="nav-music-block-img play-in-block"></div>
+						</a>
+					</div>
 					<footer>
 						<div class="canvas"></div>
 						<div class="name">
@@ -125,7 +143,13 @@
 				</div>
 				<div class="music-block">
 					<a href="#"><span>Italo Disco</span></a>
-					<a href="#"><img src="images/img_albume4.jpg" alt=""></a>
+					<div class="music-block-img">
+						<a href="#">
+							<img src="images/img_albume4.jpg" alt="">
+							<div class="shadow-for-img"></div>
+							<div class="nav-music-block-img play-in-block"></div>
+						</a>
+					</div>
 					<footer>
 						<div class="canvas"></div>
 						<div class="name">
@@ -152,7 +176,13 @@
 				</div>
 				<div class="music-block">
 					<a href="#"><span>Italo Disco</span></a>
-					<a href="#"><img src="images/img_albume5.jpg" alt=""></a>
+					<div class="music-block-img">
+						<a href="#">
+							<img src="images/img_albume5.jpg" alt="">
+							<div class="shadow-for-img"></div>
+							<div class="nav-music-block-img play-in-block"></div>
+						</a>
+					</div>
 					<footer>
 						<div class="canvas"></div>
 						<div class="name">
@@ -201,17 +231,21 @@
 	</div>
 
 	<!-- audioPlayer -->
+	
 	<audio id="music" preload="true">
-		<source src="audio/music.mp3">
+		<source src="audio/music1.mp3">
 	</audio>
-	<div class="container-audioplayer">
+	<div id="audioplayer" class="container-audioplayer">
 		<div class="audioplayer">
+			<button id="nextButton" class="previous"></button>
 			<button id="pButton" class="play"></button>
+			<button id="preButton" class="next"></button>
 			<div id="timeline" class="timeline">    
 				<div id="playhead" class="playhead"></div>
 			</div>
 		</div>
 	</div>
+	<button id="closeButton" class="close visible-audioplayer"></button>
 	<!-- <div class="visible-audioplayer"></div> -->
 
 	<script src="js/main.js"></script>

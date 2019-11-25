@@ -1,3 +1,31 @@
+var closeButton = document.getElementById('closeButton');
+var audioplayer = document.getElementById('audioplayer');
+
+// При загрузке страницы проверяем:
+// * видимость audioplayer
+    if(audioplayer.style.display == "none"){
+        audioplayer.style.display = 'flex';
+        closeButton.className = "close visible-audioplayer";
+    }else{
+        audioplayer.style.display = 'none';
+        closeButton.className = "open visible-audioplayer";
+    }
+
+closeButton.onclick = function(){
+    if(audioplayer.style.display == "none"){
+        audioplayer.style.display = 'flex';
+        closeButton.className = "close visible-audioplayer";
+    }else{
+        audioplayer.style.display = 'none';
+        closeButton.className = "open visible-audioplayer";
+    }
+};
+
+
+
+
+// Player
+
 var music = document.getElementById('music');
 var duration = music.duration;
 var pButton = document.getElementById('pButton');
