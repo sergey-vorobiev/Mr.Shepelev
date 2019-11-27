@@ -12,8 +12,9 @@ function init(){
     }
 }
 
+// Функция скрытия audioplayer
 
-closeButton.onclick = function(){
+function visibleAP(){
     if(audioplayer.style.display == "none"){
         audioplayer.style.display = 'flex';
         closeButton.className = "close visible-audioplayer";
@@ -34,7 +35,7 @@ var pButton = document.getElementById('pButton');
 var playhead = document.getElementById('playhead');
 var timeline = document.getElementById('timeline');
 
-var timelineWidth = timeline.offsetWidth - playhead.offsetWidth - 1.8;
+var timelineWidth = timeline.offsetWidth - playhead.offsetWidth - 1;
 
 // play button event listenter
 pButton.addEventListener("click", play);
