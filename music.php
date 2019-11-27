@@ -19,8 +19,9 @@
 	</div>
 	<div class="music">
 		<div class="music-container">
-			<div class="music-block">
-				<a href="#"><span>Italo Disco</span></a>
+			<?php include 'app/music-block.php'; ?>
+			<!--<div class="music-block">
+		 		<a href="#"><span>Italo Disco</span></a>
 				<div class="music-block-img">
 					<a href="#">
 						<img src="public/img/img_albume1.jpg" alt="">
@@ -183,7 +184,7 @@
 						</div>
 					</div>
 				</footer>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </div>

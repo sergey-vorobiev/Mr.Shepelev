@@ -396,6 +396,7 @@ button:focus {
 .music-block .info .info-block span{
 	display: inline-block;
 	font-size: 13px;
+	margin-left: 4px;
 }
 
 .footer{
