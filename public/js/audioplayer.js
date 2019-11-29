@@ -51,6 +51,13 @@ var durations = document.getElementById('audioplayer_durations');
 var img_album = document.getElementsByClassName('audioplayer_album_img');
 
 
+var minuts;
+var second;
+
+var all_seconds;
+var now_seconds;
+var now_minutes;
+
 
 
 function changeInfoPlaylist(id){
@@ -60,6 +67,22 @@ function changeInfoPlaylist(id){
     durations.textContent = trackArray[id][3];
     img_album[0].style.backgroundImage = "url(public/img/" + trackArray[id][4] + ")";
     now_playing = id;
+
+    minuts = trackArray[now_playing][3].substring(0, 2);
+    second = trackArray[now_playing][3].substring(3, 5);
+
+    if(minuts.indexOf(0) == 0)
+        minuts = minuts.substring(1, 2);
+    else if(minuts.indexOf(0) == -1)
+        minuts = 0;
+
+    if(second.indexOf(0) == 0)
+        second = second.substring(1, 2);
+
+    all_seconds = (parseInt(minuts) * 60) + parseInt(second);
+    now_minutes = 0;
+
+    console.log(minuts, second);
 }
 
 function clickImg(id){
@@ -72,14 +95,14 @@ function clickImg(id){
     play();
 }
 
-changeInfoPlaylist(0);
+changeInfoPlaylist(2);
 
 var nextButton = document.getElementById('nextButton');
 var preButton = document.getElementById('preButton');
 
 var bool_playing = false; // играет ли песня
 
-function NextTrack(){
+function PreviousTrack(){
     var save = now_playing;
     if(--save < 0){
         now_playing = 0;
@@ -87,6 +110,7 @@ function NextTrack(){
     else{
         now_playing--;
     }
+    t = false;
     changeInfoPlaylist(now_playing);
 
     if(bool_playing){
@@ -95,13 +119,14 @@ function NextTrack(){
     else {};
 }
 
-function PreviousTrack(){
+function NextTrack(){
     var save = now_playing;
     if(save = save + 2 > count_music){
         now_playing = 0;
     } else{
         now_playing++;
     }
+    t = false;
     changeInfoPlaylist(now_playing);
 
     if(bool_playing){
@@ -123,22 +148,7 @@ var playhead = document.getElementById('playhead'); // div полосы прок
 var timeline = document.getElementById('timeline'); // полоса прокрутки
 
 
-var minuts = trackArray[0][3].substring(0, 2);
-var second = trackArray[0][3].substring(3, 5);
 
-if(minuts.indexOf(0) == 0)
-    minuts = minuts.substring(1, 2);
-else if(minuts.indexOf(0) == -1)
-    minuts = 0;
-
-if(second.indexOf(0) == 0)
-    second = second.substring(1, 2);
-else if(second.indexOf(0) == -1)
-    second = 0;
-
-var all_seconds = parseInt(minuts) * 60 + parseInt(second);
-var now_seconds;
-var now_minutes = 0;
 
 
 // Ширина временной шкалы скорректирована для воспроизведения
@@ -206,14 +216,15 @@ function moveplayhead(event) {
 
 var now_seconds_value;
 var now_minutes_value;
+var t = false;
 
 // timeUpdate
 // Синхронизирует положение точки воспроизведения с текущей точкой в аудио
 function timeUpdate() {
+    duration = music.duration;
     var playPercent = timelineWidth * (music.currentTime / duration);
     playhead.style.width = playPercent + "px";
     now_seconds = Math.round((((100 * music.currentTime) / duration) * all_seconds) / 100);
-    // console.log(now_seconds);
 
     if(now_seconds % 60 < 10)
         now_seconds_value = '0' + now_seconds % 60;
@@ -228,7 +239,12 @@ function timeUpdate() {
     else
         now_minutes_value = now_minutes;
 
-    current.textContent = now_minutes_value + ':' + now_seconds_value;
+    if(t)
+        current.textContent = now_minutes_value + ':' + now_seconds_value;
+    else{
+        current.textContent = '00:00';
+        setTimeout('t = true', 100);
+    }
 
     if (music.currentTime == duration) {
         pButton.className = "";
@@ -239,6 +255,7 @@ function timeUpdate() {
 
 //Play and Pause
 function play() {
+    t = false;
     // start music
     if (music.paused) {
         music.play();

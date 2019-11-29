@@ -328,7 +328,6 @@ button:focus {
 
 .music-block-img{
 	position: relative;
-	background-color: #222;
 
 }
 
@@ -359,6 +358,7 @@ button:focus {
 	max-width: 200px;
 	max-height: 200px;
 	transition: 0.5s;
+	background-color: #222;
 }
 
 .music-block img:hover{
