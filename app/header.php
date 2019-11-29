@@ -1,6 +1,6 @@
 <?php 
-include 'include/database.php';
-include 'include/functions.php';
+require 'include/database.php';
+require 'include/functions.php';
 ?>
 
 <!DOCTYPE html>
@@ -9,9 +9,9 @@ include 'include/functions.php';
 	<meta charset="UTF-8">
 	<title>Mr. Shepelev</title>
 	<link rel="stylesheet" href="public/css/style.css">
-	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
+<body>	
 	<div class="head">
 		<a href="index.php">
 			<div class="head-logo">

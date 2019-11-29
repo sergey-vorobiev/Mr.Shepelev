@@ -1,21 +1,18 @@
-<audio id="music" preload="true">
-	<source src="public/music/music1.mp3">
-</audio>
 <div id="audioplayer" class="container-audioplayer">
 	<div class="audioplayer">
 		<a href="#">
-			<div class="audioplayer-album-img"></div>
+			<div class="audioplayer_album_img"></div>
 		</a>
-		<button id="nextButton" class="previous"></button>
-		<button id="pButton" class="play"></button>
-		<button id="preButton" class="next"></button>
-
+		<div class="control-button">
+			<button id="nextButton" class="previous"></button>
+			<button id="pButton" class="play"></button>
+			<button id="preButton" class="next"></button>
+		</div>
 		<div class="main-time-line">
 			<div class="info-music">
 				<div class="left-content">
-					<a href="#">Footer Lorem</a>
-					<span>от:</span>
-					<a href="#">Mr.Shepelev</a>
+					<a id="audioplayer_title" href="#">Footer Lorem</a>
+					<a id="audioplayer_autor" href="#">от: Mr.Shepelev</a>
 				</div>
 				<div class="right-content">
 					<!-- <i>Ссылка на альбом</i> -->

@@ -4,12 +4,10 @@ var audioplayer = document.getElementById('audioplayer');
 // При загрузке страницы проверяем:
 // * видимость audioplayer
 
-function init(){
-    if(audioplayer.style.display == "none"){
-        closeButton.className = "open visible-audioplayer";
-    }else if(audioplayer.style.display == "flex"){
-        closeButton.className = "open visible-audioplayer";
-    }
+if(audioplayer.style.display == "none"){
+    closeButton.className = "open visible-audioplayer";
+}else if(audioplayer.style.display == "flex"){
+    closeButton.className = "close visible-audioplayer";
 }
 
 // Функция скрытия audioplayer
@@ -24,42 +22,124 @@ function visibleAP(){
     }
 };
 
-
-
-
-// Player
-
 var music = document.getElementById('music');
-var duration = music.duration;
-var pButton = document.getElementById('pButton');
-var playhead = document.getElementById('playhead');
-var timeline = document.getElementById('timeline');
+var all_block_music = document.getElementsByClassName('music-block-img');
 
+var now_playing = 1;
+var count_music = all_block_music.length;
+
+var title = document.getElementsByClassName('title');
+var autor = document.getElementsByClassName('autor');
+var img_album = document.getElementsByClassName('img_album');
+
+var trackArray = new Array();
+var trackArraySave = new Array();
+
+
+for(i = 0; i < count_music; i++){
+    trackArraySave.push('public/music/' +  all_block_music[i].id, title[i].textContent, autor[i].textContent, img_album[i].id);
+    trackArray.push(trackArraySave);
+    trackArraySave = [];
+}
+
+music.src = 'public/music/music1.mp3';
+
+var title = document.getElementById('audioplayer_title');
+var autor = document.getElementById('audioplayer_autor');
+var img_album = document.getElementsByClassName('audioplayer_album_img');
+
+
+
+function clickImg(id){
+    music.src = 'public/music/' + id;
+    for(var i = 0; i < count_music; i++){
+        if(trackArray[i][0].indexOf(id) == 13){
+            now_playing = i;
+            title.textContent = trackArray[i][1];
+            autor.textContent = trackArray[i][2];
+            img_album[0].style.backgroundImage = "url(public/img/" + trackArray[i][3] + ")";
+        }
+    }
+    play();
+}
+
+function changeInfoPlaylist(id){
+    title.textContent = trackArray[id][1];
+    autor.textContent = trackArray[id][2];
+    img_album[0].style.backgroundImage = "url(public/img/" + trackArray[id][3] + ")";
+}
+
+var nextButton = document.getElementById('nextButton');
+var preButton = document.getElementById('preButton');
+
+nextButton.onclick = function(){
+    var save = now_playing;
+    if(--save < 0){
+        now_playing = 0;
+        music.src = trackArray[now_playing][1];
+        changeInfoPlaylist(now_playing);
+        play();
+    }
+    else{
+        now_playing--;
+        music.src = trackArray[now_playing];
+        changeInfoPlaylist(now_playing);
+        play();
+    }
+}
+preButton.onclick = function(){
+    var save = now_playing;
+    if(save = save + 2 > count_music){
+        now_playing = 0;
+        music.src = trackArray[now_playing][0];
+        changeInfoPlaylist(now_playing);
+        play();
+    } else{
+        now_playing++;
+        music.src = trackArray[now_playing][0];
+        changeInfoPlaylist(now_playing);
+        play();
+    }
+}
+
+// var elements_music = document.querySelectorAll('.music-block-img > #music');
+
+// pButton.addEventListener("click", play);
+
+
+
+
+var duration = music.duration; // длительность аудиоклипа, рассчитанная здесь для встраивания
+var pButton = document.getElementById('pButton'); // кнопка play
+var playhead = document.getElementById('playhead'); // div полосы прокрутки
+var timeline = document.getElementById('timeline'); // полоса прокрутки
+
+// Ширина временной шкалы скорректирована для воспроизведения
 var timelineWidth = timeline.offsetWidth - playhead.offsetWidth - 1;
 
-// play button event listenter
+// Слушатель события кнопки воспроизведения
 pButton.addEventListener("click", play);
 
-// timeupdate event listener
+// Слушатель события timeupdate
 music.addEventListener("timeupdate", timeUpdate, false);
 
-// makes timeline clickable
+// Делает график кликабельным
 timeline.addEventListener("click", function(event) {
     moveplayhead(event);
     music.currentTime = duration * clickPercent(event);
 }, false);
 
 
-// returns click as decimal (.77) of the total timelineWidth
+// Возвращает клик в виде десятичной дроби (.77) от общей шкалы времени
 function clickPercent(event) {
     return (event.clientX - getPosition(timeline)) / timelineWidth;
 }
 
-// makes playhead draggable
+// Делает playhead перетаскиваемым
 playhead.addEventListener('mousedown', mouseDown, false);
 window.addEventListener('mouseup', mouseUp, false);
 
-// Boolean value so that audio position is updated only when the playhead is released
+// Логическое значение, чтобы позиция звука обновлялась только при отпускании точки воспроизведения.
 var onplayhead = false;
 
 // mouseDown EventListener
@@ -70,7 +150,7 @@ function mouseDown() {
 }
 
 // mouseUp EventListener
-// getting input from all mouse clicks
+// получать ввод от всех кликов мыши
 function mouseUp(event) {
     if (onplayhead == true) {
         moveplayhead(event);
@@ -82,7 +162,7 @@ function mouseUp(event) {
     onplayhead = false;
 }
 // mousemove EventListener
-// Moves playhead as user drags
+// Перемещает точку воспроизведения, когда пользователь перетаскивает
 function moveplayhead(event) {
     var newMargLeft = event.clientX - getPosition(timeline);
 
@@ -98,7 +178,7 @@ function moveplayhead(event) {
 }
 
 // timeUpdate
-// Synchronizes playhead position with current point in audio
+// Синхронизирует положение точки воспроизведения с текущей точкой в аудио
 function timeUpdate() {
     var playPercent = timelineWidth * (music.currentTime / duration);
     playhead.style.width = playPercent + "px";
@@ -124,13 +204,13 @@ function play() {
     }
 }
 
-// Gets audio file duration
+// Получает продолжительность аудиофайла
 music.addEventListener("canplaythrough", function() {
     duration = music.duration;
 }, false);
 
 // getPosition
-// Returns elements left position relative to top-left of viewport
+// Возвращает левую позицию элементов относительно левого верхнего угла области просмотра
 function getPosition(el) {
     return el.getBoundingClientRect().left;
 }

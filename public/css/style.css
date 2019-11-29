@@ -1,6 +1,21 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+/*@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');*/
 
-body{
+@font-face {
+	font-family: "Roboto"; 
+	src: url("../fonts/Roboto-Regular.ttf") format("truetype"); 
+} 
+
+@font-face {
+	font-family: "RobotoBold"; 
+	src: url("../fonts/Roboto-Bold.ttf") format("truetype"); 
+} 
+
+@font-face {
+	font-family: "RobotoLightItalic"; 
+	src: url("../fonts/Roboto-LightItalic.ttf") format("truetype"); 
+} 
+
+body{	
 	margin: 0;
 	padding: 0;
 	width: 100%;
@@ -12,6 +27,14 @@ body{
 
 ::-webkit-scrollbar{
     width: 0;
+}
+
+b{
+	font-family: RobotoBold;
+}
+
+i{
+	font-family: RobotoLightItalic;
 }
 
 a{
@@ -39,10 +62,10 @@ li{
 }
 
 .play{
-	background: url(../img/play.png);	
+	background: url(../img/play.png) no-repeat;	
 }
 .pause{
-	background: url(../img/pause.png);
+	background: url(../img/pause.png) no-repeat;
 }
 
 .play-in-block{
@@ -53,17 +76,20 @@ li{
 }
 
 .next{
-	background: url(../img/skip-next.png);
+	background: url(../img/skip-next.png) no-repeat;
 }
 .previous{
-	background: url(../img/skip-previous.png);
+	background: url(../img/skip-previous.png) no-repeat;
 }
 
-.fas{
-	font-size: 11px;
-	width: 12px;
-	height: 12px;
-	background-size: 100%;
+.info-block{
+	display: flex;
+	align-items: center;
+}
+
+.material-icons{
+	font-size: 14px !important;
+	line-height: 0 !important;
 }
 
 .container-audioplayer{
@@ -90,7 +116,7 @@ li{
 	height: 40px;
 }
 
-.audioplayer-album-img{
+.audioplayer_album_img{
 	width: 50px;
 	height: 50px;
 	margin-right: 20px;
@@ -103,6 +129,10 @@ li{
 #closeButton{
 	border: none;
 	background-size: 100%;
+}
+
+.control-button{
+	display: flex;
 }
 
 .visible-audioplayer{
@@ -123,7 +153,6 @@ button:focus {
 
 .audio-line-info{
 	display: flex;
-	align-items: center;
 }
 
 .audio-line-info span{
@@ -137,6 +166,7 @@ button:focus {
 	margin: 0 8px;
 	width: 420px;
 	height: 11px;
+	margin-top: 2px;
 	border: 0.4px solid white;
 	background-color: #2e2e2e;
 	border-radius: 1px;
@@ -168,6 +198,11 @@ button:focus {
 
 .left-content{
 	display: flex;
+	justify-content: space-between;
+}
+
+.left-content #audioplayer_title{
+	align-items: flex-end;
 }
 
 .left-content span{
@@ -199,11 +234,7 @@ button:focus {
 	background-color: #4484CF;
 }
 
-.head-logo b{
-	color: #4484CF;
-}
-
-.head-logo:hover b{
+.head-logo:hover{
 	color: #D9D9D9;
 }
 
@@ -237,7 +268,7 @@ button:focus {
 }
 
 .found-block h1{
-  	text-shadow: 0 -40px 3px #4484CF , 0 40px 6px #4484CF;
+  	text-shadow: 0 -40px 3px #4484CF, 0 40px 6px #4484CF;
 }
 
 .found-bottom ul li{
@@ -293,7 +324,12 @@ button:focus {
 
 .music-block-img{
 	position: relative;
+	background-color: #222;
 
+}
+
+.music-block-img:hover{
+	cursor: pointer;
 }
 
 .shadow-for-img{
@@ -381,6 +417,7 @@ button:focus {
 
 .music-block .info{
 	margin-top: 2px;
+	margin-left: -5px;
 	display: flex;
 	align-items: center;
 }
@@ -394,7 +431,6 @@ button:focus {
 }
 
 .music-block .info .info-block span{
-	display: inline-block;
 	font-size: 13px;
 	margin-left: 4px;
 }
