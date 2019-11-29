@@ -19,7 +19,7 @@
 				</div>
 			</div>
 			<div class="audio-line-info">
-				<span>00:00</span>
+				<span id="audioplayer_current">00:00</span>
 				<div id="timeline" class="timeline">
 					<div id="playhead" class="playhead"></div>
 				</div>

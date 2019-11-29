@@ -46,6 +46,7 @@ for(i = 0; i < count_music; i++){
 
 var title = document.getElementById('audioplayer_title');
 var autor = document.getElementById('audioplayer_autor');
+var current = document.getElementById('audioplayer_current');
 var durations = document.getElementById('audioplayer_durations');
 var img_album = document.getElementsByClassName('audioplayer_album_img');
 
@@ -121,6 +122,25 @@ var pButton = document.getElementById('pButton'); // кнопка play
 var playhead = document.getElementById('playhead'); // div полосы прокрутки
 var timeline = document.getElementById('timeline'); // полоса прокрутки
 
+
+var minuts = trackArray[0][3].substring(0, 2);
+var second = trackArray[0][3].substring(3, 5);
+
+if(minuts.indexOf(0) == 0)
+    minuts = minuts.substring(1, 2);
+else if(minuts.indexOf(0) == -1)
+    minuts = 0;
+
+if(second.indexOf(0) == 0)
+    second = second.substring(1, 2);
+else if(second.indexOf(0) == -1)
+    second = 0;
+
+var all_seconds = parseInt(minuts) * 60 + parseInt(second);
+var now_seconds;
+var now_minutes = 0;
+
+
 // Ширина временной шкалы скорректирована для воспроизведения
 var timelineWidth = timeline.offsetWidth - playhead.offsetWidth - 1;
 
@@ -184,11 +204,32 @@ function moveplayhead(event) {
     }
 }
 
+var now_seconds_value;
+var now_minutes_value;
+
 // timeUpdate
 // Синхронизирует положение точки воспроизведения с текущей точкой в аудио
 function timeUpdate() {
     var playPercent = timelineWidth * (music.currentTime / duration);
     playhead.style.width = playPercent + "px";
+    now_seconds = Math.round((((100 * music.currentTime) / duration) * all_seconds) / 100);
+    // console.log(now_seconds);
+
+    if(now_seconds % 60 < 10)
+        now_seconds_value = '0' + now_seconds % 60;
+    else if(now_seconds > 60){
+        now_seconds_value = now_seconds % 60;
+    }
+    else
+        now_seconds_value = now_seconds;
+
+    if(Math.floor(now_seconds / 60) < 10)
+        now_minutes_value = '0' + Math.floor(now_seconds / 60);
+    else
+        now_minutes_value = now_minutes;
+
+    current.textContent = now_minutes_value + ':' + now_seconds_value;
+
     if (music.currentTime == duration) {
         pButton.className = "";
         pButton.className = "play";
