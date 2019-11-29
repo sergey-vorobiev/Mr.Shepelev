@@ -46,6 +46,7 @@ for($i = 0; $i < $rows; $i++){
 						echo '<i class="material-icons">mode_comment</i>';
 						echo '<span>'.$comments.'</span>';
 				echo '</div>';
+				echo '<div id="'.$duration.'" class="duration invisible"></div>';
 			echo '</div>';
 		echo '</footer>';
 	echo '</div>';

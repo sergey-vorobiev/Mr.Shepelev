@@ -82,6 +82,10 @@ li{
 	background: url(../img/skip-previous.png) no-repeat;
 }
 
+.invisible{
+	display: none;
+}
+
 .info-block{
 	display: flex;
 	align-items: center;
