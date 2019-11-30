@@ -1,3 +1,4 @@
+// подключаем кнопку скрытия аудиоплейера и аудиоплейер
 var closeButton = document.getElementById('closeButton');
 var audioplayer = document.getElementById('audioplayer');
 
@@ -11,7 +12,6 @@ if(audioplayer.style.display == "none"){
 }
 
 // Функция скрытия audioplayer
-
 function visibleAP(){
     if(audioplayer.style.display == "none"){
         audioplayer.style.display = 'flex';
@@ -39,7 +39,7 @@ var trackArraySave = new Array();
 
 // цикл для создная массива, с переменными для их дальнейшей замене в HTML
 for(i = 0; i < count_music; i++){
-    trackArraySave.push('public/music/' +  all_block_music[i].id, title[i].textContent, autor[i].textContent, duration[i].id, img_album[i].id);
+    trackArraySave.push('public/music/' + all_block_music[i].id, title[i].textContent, autor[i].textContent, duration[i].id, img_album[i].id);
     trackArray.push(trackArraySave);
     trackArraySave = [];
 }
@@ -50,16 +50,10 @@ var current = document.getElementById('audioplayer_current');
 var durations = document.getElementById('audioplayer_durations');
 var img_album = document.getElementsByClassName('audioplayer_album_img');
 
+// переменные для динамического времени
+var minuts, second, all_seconds, now_seconds, now_minutes;
 
-var minuts;
-var second;
-
-var all_seconds;
-var now_seconds;
-var now_minutes;
-
-
-
+// добавление информации на аудиоплейер
 function changeInfoPlaylist(id){
     music.src = trackArray[id][0];
     title.textContent = trackArray[id][1];
@@ -85,6 +79,7 @@ function changeInfoPlaylist(id){
     console.log(minuts, second);
 }
 
+// при наэатии на изображение music-block
 function clickImg(id){
     for(var i = 0; i < count_music; i++){
         if(trackArray[i][0].indexOf(id) == 13){
@@ -95,13 +90,32 @@ function clickImg(id){
     play();
 }
 
-changeInfoPlaylist(2);
+// поумолчанию ставится первый трек в аудиоплейер
+changeInfoPlaylist(0);
 
 var nextButton = document.getElementById('nextButton');
 var preButton = document.getElementById('preButton');
 
 var bool_playing = false; // играет ли песня
 
+// следующий трек
+function NextTrack(){
+    var save = now_playing;
+    if(save = save + 2 > count_music){
+        now_playing = 0;
+    } else{
+        now_playing++;
+    }
+    t = false;
+    changeInfoPlaylist(now_playing);
+
+    if(bool_playing){
+        play();
+    }
+    else {};
+}
+
+// предыдущий трек
 function PreviousTrack(){
     var save = now_playing;
     if(--save < 0){
@@ -119,37 +133,10 @@ function PreviousTrack(){
     else {};
 }
 
-function NextTrack(){
-    var save = now_playing;
-    if(save = save + 2 > count_music){
-        now_playing = 0;
-    } else{
-        now_playing++;
-    }
-    t = false;
-    changeInfoPlaylist(now_playing);
-
-    if(bool_playing){
-        play();
-    }
-    else {};
-}
-
-// var elements_music = document.querySelectorAll('.music-block-img > #music');
-
-// pButton.addEventListener("click", play);
-
-
-
-
 var duration = music.duration; // длительность аудиоклипа, рассчитанная здесь для встраивания
 var pButton = document.getElementById('pButton'); // кнопка play
 var playhead = document.getElementById('playhead'); // div полосы прокрутки
 var timeline = document.getElementById('timeline'); // полоса прокрутки
-
-
-
-
 
 // Ширина временной шкалы скорректирована для воспроизведения
 var timelineWidth = timeline.offsetWidth - playhead.offsetWidth - 1;
@@ -224,6 +211,8 @@ function timeUpdate() {
     duration = music.duration;
     var playPercent = timelineWidth * (music.currentTime / duration);
     playhead.style.width = playPercent + "px";
+
+    // супер формуля для подсчета секунды
     now_seconds = Math.round((((100 * music.currentTime) / duration) * all_seconds) / 100);
 
     if(now_seconds % 60 < 10)
@@ -239,6 +228,7 @@ function timeUpdate() {
     else
         now_minutes_value = now_minutes;
 
+    // задержка до появления первых значений в now-seccond
     if(t)
         current.textContent = now_minutes_value + ':' + now_seconds_value;
     else{
