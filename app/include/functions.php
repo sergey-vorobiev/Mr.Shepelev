@@ -28,4 +28,12 @@ function login($link, $login, $password) {
 	}
 }
 
+function addTrack($link, $name, $autor, $genre, $name_music_in_folder, $duration, $img_album){
+	
+	// добавление нового трека в базу данных
+
+	$newTrack = mysqli_query($link, "INSERT INTO music (id, name, autor, genre, name_music_in_folder, duration, img_album, num_plays, likes, comments) VALUES (NULL, '$name', '$autor', '$genre', '$name_music_in_folder', '$duration', '$img_album', '0', '0', '0')");
+
+}
+
 ?>
