@@ -13,7 +13,7 @@
 		<div class="found-bottom">
 			<ul>
 				<li class="active"><a href="#">Треки</a></li>
-				<li><a href="#">Альбомы</a></li>
+				<li><a href="#">Ремиксы</a></li>
 			</ul>
 		</div>
 	</div>

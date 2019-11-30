@@ -212,7 +212,7 @@ function timeUpdate() {
     var playPercent = timelineWidth * (music.currentTime / duration);
     playhead.style.width = playPercent + "px";
 
-    // супер формуля для подсчета секунды
+    // супер формуля для подсчета секунд
     now_seconds = Math.round((((100 * music.currentTime) / duration) * all_seconds) / 100);
 
     if(now_seconds % 60 < 10)

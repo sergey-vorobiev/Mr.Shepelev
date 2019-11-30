@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+.container-music{
+	height: 250px;
+	display: flex;
+	padding: 20px 60px;
+	color: #D9D9D9;
+	background-color: #222;
+}
+
+.img-music{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 25%;
+}
+
+.img-musics{
+	height: 90%;
+	border-radius: 360px;
+	border-top: 10px solid black;
+	border-right: 10px solid black;
+	border-bottom: 9px solid white;
+	border-left: 9px solid white;
+}
+
+.music-info{
+	width: 100%;
+	margin-left: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.misic-info-container{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-left: 20px;
+}
+
+.music-info-top{
+	display: flex;
+	align-items: center;
+}
+
+.img-play{
+	width: 95px;
+	height: 82px;
+	background: url('../img/play-in-block.png');
+	background-size: 100%;
+}
+
+.misic-info-container-top{
+	display: flex;
+	justify-content: space-between;
+	align-items:  flex-start;
+	margin-top: 3px;
+}
+
+.misic-info-container-top-right{
+	display: flex;
+	justify-content: flex-end;
+}
+
+.data{
+	margin-right: 20px;
+}
+
+.turned_in img{
+	width: 25px;
+	height: 25px;
+	background-size: 100%;
+	margin-right: 10px;
+}
+
+.info-block{
+	margin-left: 15px;
+}
+
+.info-block i{
+	margin-left: 5px;
+	margin-right: 5px;
+	display: flex;
+	align-items: center;
+}
+
+.info-block span{
+	font-size: 17px;
+}
+
+.misic-info-container-bottom{
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.main-name{
+	font-size: 32px;
+}
+
+.main-autor{    
+	font-size: 16px;
+    color: #bababa;
+}
+
+.main-autor:hover{
+    color: #4484CF;
+}
+
+.music-info-bottom{
+	display: flex;
+	align-items: center;
+}
+
+.music-info-bottom span{
+	font-size: 17px;
+}
+
+
+
+
+
+
+img.img-musics {
+  animation: 25s linear 0s normal none infinite running img-musics;
+  -webkit-animation: 25s linear 0s normal none infinite running img-musics;
+  width: 100%;
+}
+
+@keyframes img-musics {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes img-musics {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
