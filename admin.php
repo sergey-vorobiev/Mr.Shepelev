@@ -6,12 +6,12 @@ include("app/include/functions.php");
 	
 $authorization = "
 	<div class='table'>
-		<div class='tale-wrapper'>
-			<div class='table-title'>Войти в панель администратора</div>
+		<div class='table-wrapper'>
+			<div class='table-title'>Админка</div>
 			<div class='table-content'>
             	<form method='post' id='login-form' class='login-form'>
-                  	<input type='text' placeholder='Логин' class='input' name='login' required><br>
-                 	<input type='password' placeholder='Пароль' class='input' name='password' required><br>
+                  	<input type='text' placeholder='Логин' class='input' name='login'><br>
+                 	<input type='password' placeholder='Пароль' class='input' name='password'><br>
                 	<input type='submit' value='Войти' class='button'>
           		</form>
 		 	</div>
@@ -25,10 +25,6 @@ if(isset($_POST['login']) && isset($_POST['password'])) {
 	$_SESSION['login'] = $_POST['login'];
 
 	$_SESSION['password'] = $_POST['password'];
-
-}
-
-if(isset($_SESSION['login']) && isset($_SESSION['password'])) {
 
 	if(login($link, $_SESSION['login'], $_SESSION['password'])) { // Попытка авторизации
 
