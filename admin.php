@@ -2,7 +2,6 @@
 
 include("app/include/database.php");
 include("app/include/functions.php");
-
 	
 $authorization = "
 	<div class='table'>
@@ -73,18 +72,36 @@ if(isset($_POST['login']) && isset($_POST['password'])) {
 		echo '<script src="public/js/admin.js"></script>';
 
 	    $authorization = null;
-
 	}
 }
+
+
 
 if(	   isset($_POST['name']) 
 	&& isset($_POST['autor']) 
 	&& isset($_POST['genre']) 
 	&& isset($_POST['name_music_in_folder']) 
 	&& isset($_POST['duration']) 
-	&& isset($_POST['img_album'])){
+	&& isset($_POST['img_album'])
+){
+	$name = $_POST['name'];
+	$autor = $_POST['autor'];
+	$genre = $_POST['genre'];
+	$name_music_in_folder = $_POST['name_music_in_folder'];
+	$duration = $_POST['duration'];
+	$img_album = $_POST['img_album'];
 
-	addTrack($link, $_POST['name'], $_POST['autor'], $_POST['genre'], $_POST['name_music_in_folder'], $_POST['duration'], $_POST['img_album']);
+	addTrack($link, $name, $autor, $genre, $name_music_in_folder, $duration, $img_album);
+	
+	include("app/include/add_new_page.php");
+
+	$file = "music-pages/music.php";
+	//если файла нету... тогда
+	if (!file_exists($file)) {
+	    $fp = fopen($file, "w"); // ("r" - считывать "w" - создавать "a" - добовлять к тексту), мы создаем файл
+	    fwrite($fp, $new_music_page);
+	    fclose($fp);
+	}
 }
 
 ?>

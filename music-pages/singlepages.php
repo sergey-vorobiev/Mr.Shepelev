@@ -4,7 +4,7 @@
 
 <div class="container-music">
 	<div class="img-music">
-		<img class="img-musics" src="../public/img/img_albume3.jpg" alt="">
+		<img class="img-musics" src="../public/img/img_albume5.jpg" alt="">
 	</div>
 	<div class="music-info">
 		<div class="music-info-top">
@@ -35,7 +35,7 @@
 				</div>
 				<div class="misic-info-container-bottom">
 					<span class="main-name">Modern Talking - Geronimo's cadillac</span>
-					<div><span>00:00</span></div>
+					<div><span>00:00</span><span> : </span><span>00:00</span></div>
 				</div>
 			</div>
 		</div>
@@ -46,7 +46,6 @@
 		</div>
 	</div>
 </div>
-<br><br><br><br>
 
 <?php
 	include 'insert/footer.php';

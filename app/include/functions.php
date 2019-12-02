@@ -9,6 +9,17 @@ function get_music_block($link){
 	return $result;
 }
 
+function get_found_music($link, $name, $autor){
+
+	$query = "SELECT * FROM music WHERE (name = '$name') and (autor = '$autor')";
+	
+	$request = mysqli_query($link, $query);
+	
+	$result = mysqli_fetch_array($request);
+
+	return $result;
+}
+
 function login($link, $login, $password) {
 
 	 // Запрос в базу данных

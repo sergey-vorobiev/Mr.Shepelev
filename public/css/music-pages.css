@@ -19,10 +19,10 @@
 .img-musics{
 	height: 90%;
 	border-radius: 360px;
-	border-top: 10px solid black;
-	border-right: 10px solid black;
-	border-bottom: 9px solid white;
-	border-left: 9px solid white;
+	border-top: 5px solid black;
+	border-right: 5px solid black;
+	border-bottom: 5px solid white;
+	border-left: 5px solid white;
 }
 
 .music-info{
