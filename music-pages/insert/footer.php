@@ -14,6 +14,4 @@
 		</div>
 	</div>
 </div>
-<script src="https://unpkg.com/wavesurfer.js"></script>
-<script src="../public/js/music-page.js"></script>
 </body>

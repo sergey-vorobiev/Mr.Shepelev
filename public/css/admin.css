@@ -11,8 +11,26 @@ body{
 	background-color: #2F343B;
 }
 
+a{
+	color: white;
+	text-decoration: none;
+}
+
+a:hover{
+	color: red;
+}
+
 .wrapper{
 	padding: 0 20px;
+}
+
+.main-func{
+	padding: 0 20px;
+}
+
+.main-func input{
+	margin-top: 2px;
+	width: 300px;
 }
 
 button{
@@ -77,18 +95,19 @@ input{
 
 .header{
 	border-bottom: 1px solid white;
-
 	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.exit{
+	
 }
 
 label{
 	color: #a6a6a6;
 	margin-top: 10px;
 	font-size: 14px;
-}
-
-.add_track{
-	display: none;
 }
 
 .addTrack-form{

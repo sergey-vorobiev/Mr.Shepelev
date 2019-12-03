@@ -6,8 +6,6 @@ var wavesurfer = WaveSurfer.create({
     height: 100
 });
 
-wavesurfer.load('../public/music/music3.mp3');
-
 wavesurfer.on('ready', function () {
     wavesurfer.play();
 });

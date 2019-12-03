@@ -99,7 +99,7 @@ var preButton = document.getElementById('preButton');
 var bool_playing = false; // играет ли песня
 
 // следующий трек
-function NextTrack(){
+function PreviousTrack(){
     var save = now_playing;
     if(save = save + 2 > count_music){
         now_playing = 0;
@@ -110,13 +110,14 @@ function NextTrack(){
     changeInfoPlaylist(now_playing);
 
     if(bool_playing){
+        playhead.style.width = "0";
         play();
     }
     else {};
 }
 
 // предыдущий трек
-function PreviousTrack(){
+function NextTrack(){
     var save = now_playing;
     if(--save < 0){
         now_playing = 0;
@@ -128,6 +129,7 @@ function PreviousTrack(){
     changeInfoPlaylist(now_playing);
 
     if(bool_playing){
+        playhead.style.width = "0";
         play();
     }
     else {};
@@ -228,12 +230,11 @@ function timeUpdate() {
     else
         now_minutes_value = now_minutes;
 
-    // задержка до появления первых значений в now-seccond
-    if(t)
         current.textContent = now_minutes_value + ':' + now_seconds_value;
-    else{
+
+    if(current.textContent == '0:NaN'){
         current.textContent = '00:00';
-        setTimeout('t = true', 100);
+        // setTimeout('t = true', 100);
     }
 
     if (music.currentTime == duration) {
