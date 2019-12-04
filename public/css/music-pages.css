@@ -54,6 +54,10 @@
 	background-size: 100%;
 }
 
+.img-play:hover{
+	cursor: pointer;
+}
+
 .misic-info-container-top{
 	display: flex;
 	justify-content: space-between;
@@ -108,7 +112,7 @@
 }
 
 .main-autor:hover{
-    color: #4484CF;
+    color: #4484CF;/
 }
 
 .music-info-bottom{
@@ -120,6 +124,11 @@
 	font-size: 17px;
 }
 
+#waveform{
+	border-bottom: 1px solid white;
+	border-top: 1px solid white;
+	overflow: none;
+}
 
 
 

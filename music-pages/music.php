@@ -1,7 +1,7 @@
 <?php
 	include "insert/header.php";
 
-	$result = get_found_music($link, "So Long 7755__ + 2", "Mr. Shepelev");
+	$result = get_found_music($link, "So Long 04.12.2019", "Mr. Shepelev");
 
 ?>
 
@@ -11,11 +11,11 @@
 	</div>
 	<div class="music-info">
 		<div class="music-info-top">
-			<div onclick="ready()" class="img-play"></div>
+			<div onclick="playAndPause()" id="playAndPause_p" class="img-play"></div>
 			<div class="misic-info-container">
 				<div class="misic-info-container-top">
 					<div class="misic-info-autor">
-						<a href="#" class="main-autor"><?php echo $result[1]; ?></a>
+						<a href="#" class="main-autor"><?php echo $result[2]; ?></a>
 					</div>
 					<div class="misic-info-container-top-right">
 						<div class="info-block">
@@ -37,8 +37,8 @@
 					</div>
 				</div>
 				<div class="misic-info-container-bottom">
-					<span class="main-name"><?php echo $result[2]; ?></span>
-					<div><span>00:00</span><span> : </span><span><?php echo $result[5]; ?></span></div>
+					<span class="main-name"><?php echo $result[1]; ?></span>
+					<div><span id="now_time_timeline">00:00</span><span> : </span><span id="duration_track">00:00</span></div>
 				</div>
 			</div>
 		</div>

@@ -110,6 +110,7 @@ function PreviousTrack(){
     changeInfoPlaylist(now_playing);
 
     if(bool_playing){
+        playhead.style.width = 0;
         playhead.style.width = "0";
         play();
     }
@@ -129,6 +130,7 @@ function NextTrack(){
     changeInfoPlaylist(now_playing);
 
     if(bool_playing){
+        playhead.style.width = 0;
         playhead.style.width = "0";
         play();
     }

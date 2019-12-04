@@ -13,7 +13,7 @@ $new_music_page = '<?php
 	</div>
 	<div class="music-info">
 		<div class="music-info-top">
-			<div onclick="ready()" class="img-play"></div>
+			<div onclick="playAndPause()" id="playAndPause_p" class="img-play"></div>
 			<div class="misic-info-container">
 				<div class="misic-info-container-top">
 					<div class="misic-info-autor">
@@ -40,7 +40,7 @@ $new_music_page = '<?php
 				</div>
 				<div class="misic-info-container-bottom">
 					<span class="main-name"><?php echo $result[1]; ?></span>
-					<div><span>00:00</span><span> : </span><span><?php echo $result[5]; ?></span></div>
+					<div><span id="now_time_timeline">00:00</span><span> : </span><span id="duration_track">00:00</span></div>
 				</div>
 			</div>
 		</div>
