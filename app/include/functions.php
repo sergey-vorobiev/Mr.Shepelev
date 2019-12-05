@@ -39,11 +39,11 @@ function login($link, $login, $password) {
 	}
 }
 
-function addTrack($link, $name, $autor, $genre, $name_music_in_folder, $duration, $img_album, $data){
+function addTrack($link, $name, $autor, $genre, $name_music_in_folder, $duration, $img_album, $data, $vowels){
 	
 	// добавление нового трека в базу данных
 
-	$newTrack = mysqli_query($link, "INSERT INTO music (id, name, autor, genre, name_music_in_folder, duration, img_album, data, num_plays, likes, comments) VALUES (NULL, '$name', '$autor', '$genre', '$name_music_in_folder', '$duration', '$img_album', '$data', '0', '0', '0')");
+	$newTrack = mysqli_query($link, "INSERT INTO music (id, name, autor, genre, name_music_in_folder, duration, img_album, data, vowels, num_plays, likes, comments) VALUES (NULL, '$name', '$autor', '$genre', '$name_music_in_folder', '$duration', '$img_album', '$data', '$vowels', '0', '0', '0')");
 
 }
 

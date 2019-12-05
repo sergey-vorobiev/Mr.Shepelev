@@ -31,7 +31,7 @@ $add_track = '
 				<input type="text" placeholder="00:00:0000" value="05.24.2020" name="data" required>
 
 	        	<input type="submit" name="addTrack" value="Добавить трек" class="button-form-addTrack">
-			</form>
+			</form>	
 		</div>
 	</div>
 ';
@@ -46,11 +46,15 @@ if(isset($_POST['addTrack'])){
 	$img_album = $_POST['img_album'];
 	$data = $_POST['data'];
 
-	addTrack($link, $name, $autor, $genre, $name_music_in_folder, $duration, $img_album, $data);
+	$vowels = preg_replace("/[^a-zA-ZА-Яа-я0-9\s]/", "", $name);
+	$vowels = preg_replace("/\s+/", "", $vowels);
+
+	$file = "music-pages/".$vowels.".php";
+
+	addTrack($link, $name, $autor, $genre, $name_music_in_folder, $duration, $img_album, $data, $file);
 	
 	include("app/include/add_new_page.php");
 
-	$file = "music-pages/music.php";
 	//если файла нету... тогда
 	if (!file_exists($file)) {
 	    $fp = fopen($file, "w"); // ("r" - считывать "w" - создавать "a" - добовлять к тексту), мы создаем файл

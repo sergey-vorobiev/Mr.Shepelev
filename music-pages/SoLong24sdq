@@ -1,9 +1,7 @@
 <?php
-
-$new_music_page = '<?php
 	include "insert/header.php";
 
-	$result = get_found_music($link, "'.$name.'", "'.$autor.'");
+	$result = get_found_music($link, "So Long 2 4 sdq", "Mr. Shepelev");
 
 ?>
 
@@ -61,7 +59,4 @@ $new_music_page = '<?php
 
 <?php
 	include "insert/footer.php";
-?>
-';
-
 ?>

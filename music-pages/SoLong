@@ -1,7 +1,7 @@
 <?php
 	include "insert/header.php";
 
-	$result = get_found_music($link, "So Long2 2 2 2", "Mr. Shepelev");
+	$result = get_found_music($link, "So Long", "Mr. Shepelev");
 
 ?>
 
@@ -24,15 +24,15 @@
 						</div>
 						<div class="info-block">
 							<i class="material-icons" style="font-size: 20px !important; margin-right: 1px">play_arrow</i>
-							<span class="play_arrow"><?php echo $result[8]; ?></span>
+							<span class="play_arrow"><?php echo $result[9]; ?></span>
 						</div>
 						<div class="info-block">
 							<i class="material-icons">favorite</i>
-							<span class="favorite"><?php echo $result[9]; ?></span>
+							<span class="favorite"><?php echo $result[10]; ?></span>
 						</div>
 						<div class="info-block">
 							<i class="material-icons">mode_comment</i>
-							<span class="mode_comment"><?php echo $result[10]; ?></span>
+							<span class="mode_comment"><?php echo $result[11]; ?></span>
 						</div>
 					</div>
 				</div>

@@ -14,9 +14,10 @@ for($i = 0; $i < $rows; $i++){
 	$name_music_in_folder = $row[4];
 	$duration = $row[5];
 	$img_album = $row[6];
-	$num_plays = $row[8];
-	$likes = $row[9];
-	$comments = $row[10];
+	$vowels = $row[8];
+	$num_plays = $row[9];
+	$likes = $row[10];
+	$comments = $row[11];
 
 	echo '<div class="music-block">';
 		echo '<a href="#"><span>'.$genre.'</span></a>';
@@ -28,7 +29,7 @@ for($i = 0; $i < $rows; $i++){
 		echo '<footer>';
 			echo '<div class="canvas"></div>';
 				echo '<div class="name">';
-					echo '<a class="title" href="#">'.$name.'</a>';
+					echo '<a class="title" href='.$vowels.'>'.$name.'</a>';
 				echo '</div>';
 				echo '<div class="autor">';
 					echo '<a class="audioplayer_autor" href="#">'.$autor.'</a>';
