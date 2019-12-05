@@ -14,9 +14,9 @@ for($i = 0; $i < $rows; $i++){
 	$name_music_in_folder = $row[4];
 	$duration = $row[5];
 	$img_album = $row[6];
-	$num_plays = $row[7];
-	$likes = $row[8];
-	$comments = $row[9];
+	$num_plays = $row[8];
+	$likes = $row[9];
+	$comments = $row[10];
 
 	echo '<div class="music-block">';
 		echo '<a href="#"><span>'.$genre.'</span></a>';

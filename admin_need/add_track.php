@@ -27,6 +27,9 @@ $add_track = '
 				<label for="name">Изображение альбома: </label>
 				<input type="text" placeholder="img_albume6.jpg" value="img_albume.jpg" name="img_album" required>
 
+				<label for="name">Дата появления на свет: </label>
+				<input type="text" placeholder="00:00:0000" value="05.24.2020" name="data" required>
+
 	        	<input type="submit" name="addTrack" value="Добавить трек" class="button-form-addTrack">
 			</form>
 		</div>
@@ -41,8 +44,9 @@ if(isset($_POST['addTrack'])){
 	$name_music_in_folder = $_POST['name_music_in_folder'];
 	$duration = $_POST['duration'];
 	$img_album = $_POST['img_album'];
+	$data = $_POST['data'];
 
-	addTrack($link, $name, $autor, $genre, $name_music_in_folder, $duration, $img_album);
+	addTrack($link, $name, $autor, $genre, $name_music_in_folder, $duration, $img_album, $data);
 	
 	include("app/include/add_new_page.php");
 

@@ -8,8 +8,8 @@ $new_music_page = '<?php
 ?>
 
 <div class="container-music">
-	<div class="img-music">
-		<img class="img-musics" src="../public/img/<?php echo $result[6] ?>" alt="">
+	<div class="img-music" id="img_music">
+		<img class="img-musics" id="img_musics" src="../public/img/<?php echo $result[6] ?>" alt="">
 	</div>
 	<div class="music-info">
 		<div class="music-info-top">
@@ -22,19 +22,19 @@ $new_music_page = '<?php
 					<div class="misic-info-container-top-right">
 						<div class="info-block">
 							<i class="material-icons">access_time</i>
-							<span class="data">30.11.2019</span>
+							<span class="data"><?php echo $result[7]; ?></span>
 						</div>
 						<div class="info-block">
 							<i class="material-icons" style="font-size: 20px !important; margin-right: 1px">play_arrow</i>
-							<span class="play_arrow"><?php echo $result[7]; ?></span>
+							<span class="play_arrow"><?php echo $result[8]; ?></span>
 						</div>
 						<div class="info-block">
 							<i class="material-icons">favorite</i>
-							<span class="favorite"><?php echo $result[8]; ?></span>
+							<span class="favorite"><?php echo $result[9]; ?></span>
 						</div>
 						<div class="info-block">
 							<i class="material-icons">mode_comment</i>
-							<span class="mode_comment"><?php echo $result[9]; ?></span>
+							<span class="mode_comment"><?php echo $result[10]; ?></span>
 						</div>
 					</div>
 				</div>
@@ -62,6 +62,6 @@ $new_music_page = '<?php
 <?php
 	include "insert/footer.php";
 ?>
-"';
+';
 
 ?>
