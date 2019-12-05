@@ -2,7 +2,7 @@
 
 function get_music_block($link){
 
-	$sql = "SELECT * FROM music";
+	$sql = "SELECT * FROM music ORDER BY id DESC";
 
 	$result = mysqli_query($link, $sql) or die("Ошибка " . mysqli_error($link));
 

@@ -29,7 +29,7 @@ for($i = 0; $i < $rows; $i++){
 		echo '<footer>';
 			echo '<div class="canvas"></div>';
 				echo '<div class="name">';
-					echo '<a class="title" href='.$vowels.'>'.$name.'</a>';
+					echo '<a class="title" href='.$vowels.' target="_blank">'.$name.'</a>';
 				echo '</div>';
 				echo '<div class="autor">';
 					echo '<a class="audioplayer_autor" href="#">'.$autor.'</a>';
