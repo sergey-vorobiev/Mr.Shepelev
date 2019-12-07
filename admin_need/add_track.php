@@ -49,7 +49,7 @@ if(isset($_POST['addTrack'])){
 	$vowels = preg_replace("/[^a-zA-ZА-Яа-я0-9\s]/", "", $name);
 	$vowels = preg_replace("/\s+/", "", $vowels);
 
-	$file = "music-pages/".$vowels.".php";
+	$file = "music-pages/tracks/".$vowels.".php";
 
 	addTrack($link, $name, $autor, $genre, $name_music_in_folder, $duration, $img_album, $data, $file);
 	

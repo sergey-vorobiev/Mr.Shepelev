@@ -1,7 +1,7 @@
 <?php
 
 $new_music_page = '<?php
-	include "insert/header.php";
+	include "../insert/header.php";
 
 	$result = get_found_music($link, "'.$name.'", "'.$autor.'");
 
@@ -13,7 +13,7 @@ $new_music_page = '<?php
 
 <div class="container-music">
 	<div class="img-music" id="img_music">
-		<img class="img-musics" id="img_musics" src="../public/img/<?php echo $result[6] ?>" alt="">
+		<img class="img-musics" id="img_musics" src="../../public/img/<?php echo $result[6] ?>" alt="">
 	</div>
 	<div class="music-info">
 		<div class="music-info-top">
@@ -50,17 +50,17 @@ $new_music_page = '<?php
 		</div>
 		<div id="waveform"></div>
 		<div class="music-info-bottom">
-			<div class="turned_in"><img src="../public/img/turned_in.png" alt=""></div>
+			<div class="turned_in"><img src="../../public/img/turned_in.png" alt=""></div>
 			<span><?php echo $result[3]; ?></span>
 		</div>
 	</div>
 </div>
 
 <script src="https://unpkg.com/wavesurfer.js"></script>
-<script src="../public/js/music-page.js"></script>
+<script src="../../public/js/music-page.js"></script>
 
 <script>
-	wavesurfer.load("../public/music/<?php echo $result[4] ?>");
+	wavesurfer.load("../../public/music/<?php echo $result[4] ?>");
 </script>
 
 <?php

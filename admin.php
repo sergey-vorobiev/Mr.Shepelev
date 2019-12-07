@@ -51,6 +51,8 @@ if($_GET['do'] == 'addTrack'){
 	$help = $add_track;
 }
 
+include 'admin_need/add_remix.php';
+
 if($_GET['do'] == 'addRemix'){
 	$save_admin = null;
 	$help = $add_track;

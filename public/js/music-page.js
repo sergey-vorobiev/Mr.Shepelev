@@ -43,13 +43,13 @@ function playAndPause(){
 	if(ready_start){
 		if(now_playing){
 	    	wavesurfer.pause();
-	    	playAndPause_p.style.backgroundImage = "url('../public/img/play-in-block.png')";
+	    	playAndPause_p.style.backgroundImage = "url('../../public/img/play-in-block.png')";
 	    	now_playing = false;
 	    	imgRotate();
 		}
 		else{
 	    	wavesurfer.play();
-	    	playAndPause_p.style.backgroundImage = "url('../public/img/pause-in-block.png')";
+	    	playAndPause_p.style.backgroundImage = "url('../../public/img/pause-in-block.png')";
 	    	now_playing = true;
 	    	imgRotate();
 		}
@@ -64,7 +64,6 @@ wavesurfer.on('ready', function () {
 
 wavesurfer.on('audioprocess', function () {
 	now_time_timeline.textContent = time(wavesurfer.getCurrentTime());
-	console.log("Stop!");
 });
 
 wavesurfer.on('finish', function () {
