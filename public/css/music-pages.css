@@ -128,6 +128,16 @@ img.img-musics {
 .music-info-bottom{
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
+}
+
+.turned_in{
+	display: flex;
+	align-items: center;
+}
+
+.music-info-bottom .turned_in span{
+	font-size: 17px;
 }
 
 .music-info-bottom span{

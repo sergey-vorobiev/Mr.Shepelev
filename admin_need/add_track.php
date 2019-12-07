@@ -53,7 +53,7 @@ if(isset($_POST['addTrack'])){
 
 	addTrack($link, $name, $autor, $genre, $name_music_in_folder, $duration, $img_album, $data, $file);
 	
-	include("app/include/add_new_page.php");
+	include("app/include/add_new_page_tracks.php");
 
 	//если файла нету... тогда
 	if (!file_exists($file)) {

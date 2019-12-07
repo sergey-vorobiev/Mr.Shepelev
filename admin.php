@@ -39,9 +39,9 @@ if($_GET['do'] == ''){
 }
 
 if($_GET['do'] == 'logout'){
-	 unset($_SESSION['admin']);
-	 session_destroy();
-	 header("Location: login.php");
+	unset($_SESSION['admin']);
+	session_destroy();
+	header("Location: login.php");
 }
 
 include 'admin_need/add_track.php';
@@ -55,7 +55,7 @@ include 'admin_need/add_remix.php';
 
 if($_GET['do'] == 'addRemix'){
 	$save_admin = null;
-	$help = $add_track;
+	$help = $add_remix;
 }
 
 ?>

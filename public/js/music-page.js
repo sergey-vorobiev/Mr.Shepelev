@@ -69,7 +69,7 @@ wavesurfer.on('audioprocess', function () {
 wavesurfer.on('finish', function () {
 	img_music.style.WebkitTransform = "none";
 	now_time_timeline.textContent = "00:00";
-	playAndPause_p.style.backgroundImage = "url('../public/img/play-in-block.png')";
+	playAndPause_p.style.backgroundImage = "url('../../public/img/play-in-block.png')";
 	now_playing = false;
 	wavesurfer.stop();
 });
