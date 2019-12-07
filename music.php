@@ -3,6 +3,9 @@
 	require_once 'app/header.php';
 
 ?>
+<head>
+	<title>Музыка</title>
+</head>
 
 <div class="main">
 	<div class="fount-block-plus">
@@ -19,6 +22,7 @@
 	</div>
 	<div class="music">
 		<div class="music-container">
+			
 			<?php include 'app/music-block.php'; ?>
 			<audio id="music"></audio>
 		</div>

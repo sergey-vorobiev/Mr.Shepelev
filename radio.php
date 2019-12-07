@@ -3,6 +3,9 @@
 	include_once 'app/header.php';
 
 ?>
+	<head>
+		<title>Радио</title>
+	</head>
 
 	<div class="main">
 			<div class="fount-block-plus">

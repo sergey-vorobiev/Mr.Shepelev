@@ -64,10 +64,11 @@ wavesurfer.on('ready', function () {
 
 wavesurfer.on('audioprocess', function () {
 	now_time_timeline.textContent = time(wavesurfer.getCurrentTime());
+	console.log("Stop!");
 });
 
 wavesurfer.on('finish', function () {
-	imgRotates.style.WebkitTransform = "none";
+	img_music.style.WebkitTransform = "none";
 	now_time_timeline.textContent = "00:00";
 	playAndPause_p.style.backgroundImage = "url('../public/img/play-in-block.png')";
 	now_playing = false;

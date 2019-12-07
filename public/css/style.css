@@ -97,6 +97,7 @@ li{
 }
 
 .container-audioplayer{
+	visibility: hidden;
 	display: flex;
 	align-items: center;
 	position: fixed;

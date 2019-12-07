@@ -5,19 +5,21 @@ var audioplayer = document.getElementById('audioplayer');
 // При загрузке страницы проверяем:
 // * видимость audioplayer
 
-if(audioplayer.style.display == "none"){
+audioplayer.style.visibility = "hidden";
+
+if(audioplayer.style.visibility == "hidden"){
     closeButton.className = "open visible-audioplayer";
-}else if(audioplayer.style.display == "flex"){
+}else if(audioplayer.style.visibility == "visible"){
     closeButton.className = "close visible-audioplayer";
 }
 
 // Функция скрытия audioplayer
 function visibleAP(){
-    if(audioplayer.style.display == "none"){
-        audioplayer.style.display = 'flex';
+    if(audioplayer.style.visibility == "hidden"){
+        audioplayer.style.visibility = 'visible';
         closeButton.className = "close visible-audioplayer";
     }else{
-        audioplayer.style.display = 'none';
+        audioplayer.style.visibility = 'hidden';
         closeButton.className = "open visible-audioplayer";
     }
 };
@@ -39,10 +41,11 @@ var trackArraySave = new Array();
 
 // цикл для создная массива, с переменными для их дальнейшей замене в HTML
 for(i = 0; i < count_music; i++){
-    trackArraySave.push('public/music/' + all_block_music[i].id, title[i].textContent, autor[i].textContent, duration[i].id, img_album[i].id);
+    trackArraySave.push('public/music/' + all_block_music[i].id, title[i].textContent, autor[i].textContent, duration[i].id, img_album[i].id, title[i].href);
     trackArray.push(trackArraySave);
     trackArraySave = [];
 }
+
 
 var title = document.getElementById('audioplayer_title');
 var autor = document.getElementById('audioplayer_autor');
@@ -61,6 +64,7 @@ function changeInfoPlaylist(id){
     durations.textContent = trackArray[id][3];
     img_album[0].style.backgroundImage = "url(public/img/" + trackArray[id][4] + ")";
     now_playing = id;
+    title.href = trackArray[id][5];
 
     minuts = trackArray[now_playing][3].substring(0, 2);
     second = trackArray[now_playing][3].substring(3, 5);
@@ -75,8 +79,6 @@ function changeInfoPlaylist(id){
 
     all_seconds = (parseInt(minuts) * 60) + parseInt(second);
     now_minutes = 0;
-
-    console.log(minuts, second);
 }
 
 // при наэатии на изображение music-block
@@ -85,6 +87,8 @@ function clickImg(id){
         if(trackArray[i][0].indexOf(id) == 13){
             now_playing = i;
             changeInfoPlaylist(i);
+            audioplayer.style.visibility = 'visible';
+            closeButton.className = "close visible-audioplayer";
         }
     }
     play();
@@ -99,7 +103,7 @@ var preButton = document.getElementById('preButton');
 var bool_playing = false; // играет ли песня
 
 // следующий трек
-function PreviousTrack(){
+function NextTrack(){
     var save = now_playing;
     if(save = save + 2 > count_music){
         now_playing = 0;
@@ -118,7 +122,7 @@ function PreviousTrack(){
 }
 
 // предыдущий трек
-function NextTrack(){
+function PreviousTrack(){
     var save = now_playing;
     if(--save < 0){
         now_playing = 0;
@@ -143,7 +147,7 @@ var playhead = document.getElementById('playhead'); // div полосы прок
 var timeline = document.getElementById('timeline'); // полоса прокрутки
 
 // Ширина временной шкалы скорректирована для воспроизведения
-var timelineWidth = timeline.offsetWidth - playhead.offsetWidth - 1;
+var timelineWidth = timeline.offsetWidth - playhead.offsetWidth;
 
 // Слушатель события кнопки воспроизведения
 pButton.addEventListener("click", play);

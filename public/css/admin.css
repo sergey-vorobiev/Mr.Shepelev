@@ -100,8 +100,12 @@ input{
 	justify-content: space-between;
 }
 
-.exit{
-	
+.content{
+	width: 100%;
+}
+
+.tools{
+	padding: 20px;
 }
 
 label{

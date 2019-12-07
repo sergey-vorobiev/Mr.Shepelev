@@ -3,7 +3,7 @@
 .container-music{
 	height: 250px;
 	display: flex;
-	padding: 20px 30px;
+	padding: 40px 30px;
 	color: #D9D9D9;
 	background-color: #222;
 }
@@ -16,7 +16,7 @@
 	width: 25%;
 	border-radius: 36px;
 	box-shadow: 2px 2px 10px black;
-	padding: 0 15px;
+	padding: 0 12px;
 }
 
 .img-music:hover{
@@ -122,7 +122,7 @@ img.img-musics {
 }
 
 .main-autor:hover{
-    color: #4484CF;/
+    color: #4484CF;
 }
 
 .music-info-bottom{
@@ -137,5 +137,8 @@ img.img-musics {
 #waveform{
 	border-bottom: 1px solid white;
 	border-top: 1px solid white;
-	overflow: none;
+}
+
+wave{
+	overflow: visible !important;
 }

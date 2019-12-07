@@ -7,7 +7,6 @@ require 'include/functions.php';
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Mr. Shepelev</title>
 	<link rel="stylesheet" href="public/css/style.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>

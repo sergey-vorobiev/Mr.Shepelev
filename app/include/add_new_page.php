@@ -7,6 +7,10 @@ $new_music_page = '<?php
 
 ?>
 
+<head>
+	<title><?php echo $result[1]; ?></title>
+</head>
+
 <div class="container-music">
 	<div class="img-music" id="img_music">
 		<img class="img-musics" id="img_musics" src="../public/img/<?php echo $result[6] ?>" alt="">

@@ -2,7 +2,7 @@
 
 function get_music_block($link){
 
-	$sql = "SELECT * FROM music ORDER BY id DESC";
+	$sql = "SELECT * FROM track ORDER BY id DESC";
 
 	$result = mysqli_query($link, $sql) or die("Ошибка " . mysqli_error($link));
 
@@ -11,7 +11,7 @@ function get_music_block($link){
 
 function get_found_music($link, $name, $autor){
 
-	$query = "SELECT * FROM music WHERE (name = '$name') and (autor = '$autor')";
+	$query = "SELECT * FROM track WHERE (name = '$name') and (autor = '$autor')";
 	
 	$request = mysqli_query($link, $query);
 	
@@ -43,7 +43,7 @@ function addTrack($link, $name, $autor, $genre, $name_music_in_folder, $duration
 	
 	// добавление нового трека в базу данных
 
-	$newTrack = mysqli_query($link, "INSERT INTO music (id, name, autor, genre, name_music_in_folder, duration, img_album, data, vowels, num_plays, likes, comments) VALUES (NULL, '$name', '$autor', '$genre', '$name_music_in_folder', '$duration', '$img_album', '$data', '$vowels', '0', '0', '0')");
+	$newTrack = mysqli_query($link, "INSERT INTO track (id, name, autor, genre, name_music_in_folder, duration, img_album, data, vowels, num_plays, likes, comments) VALUES (NULL, '$name', '$autor', '$genre', '$name_music_in_folder', '$duration', '$img_album', '$data', '$vowels', '0', '0', '0')");
 
 }
 

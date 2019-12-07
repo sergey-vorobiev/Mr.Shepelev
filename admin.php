@@ -9,9 +9,16 @@ $admin = '
 			<span>Панель администратора</span>
 			<a href="admin.php?do=logout">стать человеком</a>
 		</div>
-		<a href="admin.php?do=addTrack">
-			<button>Добавить трек</button>
-		</a>
+		<div class="content">
+			<div class="tools">
+				<a href="admin.php?do=addTrack">
+					<button>Добавить трек</button>
+				</a>
+				<a href="admin.php?do=addRemix">
+					<button>Добавить ремикс</button>
+				</a>
+			</div>
+		</div>
 	</div>
 ';
 
@@ -44,8 +51,14 @@ if($_GET['do'] == 'addTrack'){
 	$help = $add_track;
 }
 
+if($_GET['do'] == 'addRemix'){
+	$save_admin = null;
+	$help = $add_track;
+}
+
 ?>
 <head>
+	<title>Админка</title>
 	<link rel="stylesheet" href="public/css/admin.css">
 </head>
 

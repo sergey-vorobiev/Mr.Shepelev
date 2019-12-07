@@ -7,6 +7,9 @@
 	include_once 'app/header.php';
 
 ?>
+	<head>
+		<title>Главная</title>
+	</head>
 
 	<div class="main">
 		<div class="found-block">
