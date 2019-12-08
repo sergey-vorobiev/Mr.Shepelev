@@ -1,8 +1,8 @@
 <?php 
 
-function get_music_block($link){
+function get_music_block($link, $table){
 
-	$sql = "SELECT * FROM track ORDER BY id DESC";
+	$sql = "SELECT * FROM $table ORDER BY id DESC";
 
 	$result = mysqli_query($link, $sql) or die("Ошибка " . mysqli_error($link));
 

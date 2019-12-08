@@ -282,6 +282,10 @@ button:focus {
 	margin-left: 40px;
 }
 
+.found-bottom ul li a:hover{
+	cursor: pointer;
+}
+
 .found-bottom .active{
 	border-bottom: 4px solid #4484CF;
 }
@@ -306,6 +310,15 @@ button:focus {
 
 .music-container{
 	padding: 60px;
+}
+
+.track-container{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.remix-container{
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;

@@ -14,20 +14,26 @@
 			<p>Будет красиво, живописно,<br> и очень круто.</p>
 		</div>
 		<div class="found-bottom">
-			<ul>
-				<li class="active"><a href="#">Треки</a></li>
-				<li><a href="#">Ремиксы</a></li>
+			<ul id="menu">
+				<li class="active"><a>Треки</a></li>
+				<li><a>Ремиксы</a></li>
 			</ul>
 		</div>
 	</div>
 	<div class="music">
 		<div class="music-container">
-			
-			<?php include 'app/music-block.php'; ?>
-			<audio id="music"></audio>
+			<div class="music-visibility track-container">
+				<?php include 'app/music-block_track.php'; ?>
+			</div>
+			<div class="music-visibility remix-container">
+				<?php include 'app/music-block_remix.php'; ?>
+			</div>
 		</div>
 	</div>
 </div>
+<audio id="music"></audio>
+
+<script src="public/js/music.js"></script>
 
 <?php 
 
