@@ -1,6 +1,5 @@
 <head>
 	<title>Mr. Shepelev</title>
-	<link rel="stylesheet" href="public/css/music-pages.css">
 	<link rel="stylesheet" href="public/css/mr_shepelev.css">
 </head>
 <body>
@@ -50,12 +49,13 @@
 	<div class="main">
 		<div class="music">
 			<div class="music-container">
-				
-				<?php include 'app/music-block_for_mr_shepelev.php'; ?>
-				<audio id="music"></audio>
+				<div class="track-container">
+					<?php include 'app/music-block_for_mr_shepelev.php'; ?>
+				</div>
 			</div>
 		</div>
 	</div>
+	<audio id="music"></audio>
 
 	<script src="public/js/mr-shepelev.js"></script>
 

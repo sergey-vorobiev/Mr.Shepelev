@@ -11,8 +11,10 @@ function get_music_block($link, $table){
 
 function get_found_music($link, $table, $name, $autor){
 
-	$query = "SELECT * FROM $table WHERE (name = '$name') and (autor = '$autor')";
+	$query = "SELECT id, remix_on, name, autor, genre, name_music_in_folder, duration, img_album, DATE_FORMAT(data, '%e %M %Y'), vowels, num_plays, likes, comments FROM $table WHERE (name = '$name') and (autor = '$autor')";
 	
+	mysqli_query($link, "SET lc_time_names = 'ru_RU'");
+
 	$request = mysqli_query($link, $query);
 	
 	$result = mysqli_fetch_array($request);
@@ -43,7 +45,7 @@ function addTrack($link, $name, $autor, $genre, $name_music_in_folder, $duration
 	
 	// добавление нового трека в базу данных
 
-	$newTrack = mysqli_query($link, "INSERT INTO track (id, name, autor, genre, name_music_in_folder, duration, img_album, data, vowels, num_plays, likes, comments) VALUES (NULL, '$name', '$autor', '$genre', '$name_music_in_folder', '$duration', '$img_album', '$data', '$vowels', '0', '0', '0')");
+	$newTrack = mysqli_query($link, "INSERT INTO track (id, remix_on, name, autor, genre, name_music_in_folder, duration, img_album, data, vowels, num_plays, likes, comments) VALUES (NULL, NULL, '$name', '$autor', '$genre', '$name_music_in_folder', '$duration', '$img_album', '$data', '$vowels', '0', '0', '0')");
 
 }
 

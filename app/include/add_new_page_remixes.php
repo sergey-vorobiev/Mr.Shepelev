@@ -63,7 +63,7 @@ $new_music_page = '<?php
 <script src="../../public/js/music-page.js"></script>
 
 <script>
-	wavesurfer.load("../../public/music/<?php echo $result[6] ?>");
+	wavesurfer.load("../../public/music/<?php echo $result[5] ?>");
 </script>
 
 <?php

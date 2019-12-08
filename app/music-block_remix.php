@@ -33,7 +33,7 @@ for($i = 0; $i < $rows; $i++){
 					echo '<a class="title" href='.$vowels.' target="_blank">'.$remix_on.' - '.$name.'</a>';
 				echo '</div>';
 				echo '<div class="autor">';
-					echo '<a class="audioplayer_autor" href="#">'.$autor.'</a>';
+					echo '<a class="audioplayer_autor" href="MrShepelev.php">'.$autor.'</a>';
 				echo '</div>';
 				echo '<div class="info">';
 					echo '<div class="info-block">';

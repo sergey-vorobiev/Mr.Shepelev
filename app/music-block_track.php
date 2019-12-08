@@ -8,16 +8,16 @@ for($i = 0; $i < $rows; $i++){
     $row = mysqli_fetch_row($result);
 
 	$id = $row[0];
-	$name = $row[1];
-	$autor = $row[2];
-	$genre = $row[3];
-	$name_music_in_folder = $row[4];
-	$duration = $row[5];
-	$img_album = $row[6];
-	$vowels = $row[8];
-	$num_plays = $row[9];
-	$likes = $row[10];
-	$comments = $row[11];
+	$name = $row[2];
+	$autor = $row[3];
+	$genre = $row[4];
+	$name_music_in_folder = $row[5];
+	$duration = $row[6];
+	$img_album = $row[7];
+	$vowels = $row[9];
+	$num_plays = $row[10];
+	$likes = $row[11];
+	$comments = $row[12];
 
 	echo '<div class="music-block">';
 		echo '<a href="#"><span>'.$genre.'</span></a>';
@@ -32,7 +32,7 @@ for($i = 0; $i < $rows; $i++){
 					echo '<a class="title" href='.$vowels.' target="_blank">'.$name.'</a>';
 				echo '</div>';
 				echo '<div class="autor">';
-					echo '<a class="audioplayer_autor" href="#">'.$autor.'</a>';
+					echo '<a class="audioplayer_autor" href="MrShepelev.php">'.$autor.'</a>';
 				echo '</div>';
 				echo '<div class="info">';
 					echo '<div class="info-block">';

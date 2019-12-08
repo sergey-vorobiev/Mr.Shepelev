@@ -31,7 +31,7 @@ $add_remix = '
 				<input type="text" placeholder="img_albume6.jpg" value="img_albume.jpg" name="img_album" required>
 
 				<label for="name">Дата появления на свет: </label>
-				<input type="text" placeholder="00:00:0000" value="05.24.2020" name="data" required>
+				<input type="date" name="data" required>
 
 	        	<input type="submit" name="addRemix" value="Добавить трек" class="button-form-addTrack">
 			</form>	
