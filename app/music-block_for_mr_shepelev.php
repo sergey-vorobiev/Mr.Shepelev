@@ -1,6 +1,6 @@
 <?php 
 
-$result = get_music_block($link, 'track');
+$result = get_music_block_for_sorting($link);
 
 for($i = 0; $i < 5; $i++){
 
@@ -29,6 +29,9 @@ for($i = 0; $i < 5; $i++){
 			echo '<div class="canvas"></div>';
 				echo '<div class="name">';
 					echo '<a class="title" href='.$vowels.' target="_blank">'.$name.'</a>';
+				echo '</div>';
+				echo '<div class="autor">';
+					echo '<a class="audioplayer_autor" href="#">'.$autor.'</a>';
 				echo '</div>';
 				echo '<div class="info">';
 					echo '<div class="info-block">';

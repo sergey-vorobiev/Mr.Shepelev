@@ -128,3 +128,7 @@
 	background-color: #3a3a3a;
 	cursor: pointer;
 }
+
+.audioplayer_autor{
+	display: none;
+}

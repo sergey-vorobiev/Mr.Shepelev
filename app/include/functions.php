@@ -9,6 +9,15 @@ function get_music_block($link, $table){
 	return $result;
 }
 
+function get_music_block_for_sorting($link){
+
+	$sql = "((SELECT * FROM track ORDER BY data DESC LIMIT 5) UNION (SELECT * FROM remix ORDER BY data DESC LIMIT 5)) ORDER BY data DESC";
+
+	$result = mysqli_query($link, $sql) or die("Ошибка " . mysqli_error($link));
+
+	return $result;
+}
+
 function get_found_music($link, $table, $name, $autor){
 
 	$query = "SELECT id, remix_on, name, autor, genre, name_music_in_folder, duration, img_album, DATE_FORMAT(data, '%e %M %Y'), vowels, num_plays, likes, comments FROM $table WHERE (name = '$name') and (autor = '$autor')";
