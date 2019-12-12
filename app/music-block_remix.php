@@ -1,24 +1,21 @@
 <?php 
 
-$result = get_music_block($link, "remix");
-$rows = mysqli_num_rows($result);
+$track = get_music_block('remix');
 
-for($i = 0; $i < $rows; $i++){
+foreach ($track as $t) {
 
-    $row = mysqli_fetch_row($result);
-
-	$id = $row[0];
-	$remix_on = $row[1];
-	$name = $row[2];
-	$autor = $row[3];
-	$genre = $row[4];
-	$name_music_in_folder = $row[5];
-	$duration = $row[6];
-	$img_album = $row[7];
-	$vowels = $row[9];
-	$num_plays = $row[10];
-	$likes = $row[11];
-	$comments = $row[12];
+	$id = $t['id'];
+	$remix_on = $t['remix_on'];
+	$name = $t['name'];
+	$autor = $t['autor'];
+	$genre = $t['genre'];
+	$name_music_in_folder = $t['name_music_in_folder'];
+	$duration = $t['duration'];
+	$img_album = $t['img_album'];
+	$vowels = $t['vowels'];
+	$num_plays = $t['num_plays'];
+	$likes = $t['likes'];
+	$comments = $t['comments'];
 
 	echo '<div class="music-block">';
 		echo '<a href="#"><span>'.$genre.'</span></a>';

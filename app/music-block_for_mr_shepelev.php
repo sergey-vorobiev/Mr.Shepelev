@@ -1,22 +1,20 @@
 <?php 
 
-$result = get_music_block_for_sorting($link);
+$track = get_music_block_for_sorting();
 
-for($i = 0; $i < 5; $i++){
+foreach ($track as $t) {
 
-    $row = mysqli_fetch_row($result);
-
-	$id = $row[0];
-	$name = $row[2];
-	$autor = $row[3];
-	$genre = $row[4];
-	$name_music_in_folder = $row[5];
-	$duration = $row[6];
-	$img_album = $row[7];
-	$vowels = $row[9];
-	$num_plays = $row[10];
-	$likes = $row[11];
-	$comments = $row[12];
+	$id = $t['id'];
+	$name = $t['name'];
+	$autor = $t['autor'];
+	$genre = $t['genre'];
+	$name_music_in_folder = $t['name_music_in_folder'];
+	$duration = $t['duration'];
+	$img_album = $t['img_album'];
+	$vowels = $t['vowels'];
+	$num_plays = $t['num_plays'];
+	$likes = $t['likes'];
+	$comments = $t['comments'];
 
 	echo '<div class="music-block">';
 		echo '<a href="#"><span>'.$genre.'</span></a>';

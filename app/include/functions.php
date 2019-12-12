@@ -1,19 +1,17 @@
 <?php 
 
-function get_music_block($link, $table){
+function get_music_block($table){
 
-	$sql = "SELECT * FROM $table ORDER BY id DESC";
-
-	$result = mysqli_query($link, $sql) or die("Ошибка " . mysqli_error($link));
+	$result = R::getAll("SELECT * FROM $table ORDER BY id DESC");
 
 	return $result;
 }
 
-function get_music_block_for_sorting($link){
+function get_music_block_for_sorting(){
 
 	$sql = "((SELECT * FROM track ORDER BY data DESC LIMIT 5) UNION (SELECT * FROM remix ORDER BY data DESC LIMIT 5)) ORDER BY data DESC";
 
-	$result = mysqli_query($link, $sql) or die("Ошибка " . mysqli_error($link));
+	$result = R::getAll($sql);
 
 	return $result;
 }
@@ -31,25 +29,6 @@ function get_found_music($link, $table, $name, $autor){
 	return $result;
 }
 
-function login($link, $login, $password) {
-
-	 // Запрос в базу данных
-
-	$loginResult = mysqli_query($link, "SELECT * FROM userlist WHERE login = '$login' AND password = '$password' AND admin = '1'");
-
-	if(mysqli_num_rows($loginResult) == 1) {
-
-    	return true;
-
-	} else {
-
- 	unset($_SESSION['login'], $_SESSION['password']);
-
-  	return false;
-
-	}
-}
-
 function addTrack($link, $name, $autor, $genre, $name_music_in_folder, $duration, $img_album, $data, $vowels){
 	
 	// добавление нового трека в базу данных
@@ -65,5 +44,13 @@ function addRemix($link, $remix_on, $name, $autor, $genre, $name_music_in_folder
 	$newRemix = mysqli_query($link, "INSERT INTO remix (id, remix_on, name, autor, genre, name_music_in_folder, duration, img_album, data, vowels, num_plays, likes, comments) VALUES (NULL, '$remix_on', '$name', '$autor', '$genre', '$name_music_in_folder', '$duration', '$img_album', '$data', '$vowels', '0', '0', '0')");
 
 }
+
+// function listening(){
+
+// 	// засчитывание прослушивания
+
+// 	$listening = mysqli_query($link, "UPDATE core_config_data SET value = 'Ваше значение' WHERE config_id = '81';")
+
+// }
 
 ?>

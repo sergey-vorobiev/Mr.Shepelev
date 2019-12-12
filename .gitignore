@@ -12,3 +12,5 @@ music-pages/tracks/Wingsoflove.php
 music-pages/tracks/YouandMe.php
 music-pages/remixes/SoLong.php
 music-pages/remixes/test.php
+*.png
+app/include/rb.php

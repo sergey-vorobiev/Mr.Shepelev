@@ -361,6 +361,10 @@ button:focus {
 	pointer-events: none;
 }
 
+.music-block:first-child .shadow-for-img{
+	box-shadow: -1px 1px 5px 1px #E3CDA4;
+}
+
 .shadow-for-img:hover{
 	box-shadow: -1px 1px 5px 1px #E3CDA4;
 }

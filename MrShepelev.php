@@ -1,12 +1,14 @@
+<?php 
+
+require_once 'app/header.php';
+
+?>
+
 <head>
 	<title>Mr. Shepelev</title>
 	<link rel="stylesheet" href="public/css/mr_shepelev.css">
 </head>
 <body>
-
-	<?php 
-	require_once 'app/header.php';
-	?>
 
 	<div class="container-autor">
 		<div class="container-group container-group-one">

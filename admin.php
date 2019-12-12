@@ -3,70 +3,71 @@
 include("app/include/database.php");
 include("app/include/functions.php");
 
-$admin = '
-	<div class="main-panel">
-		<div class="header">
-			<span>Панель администратора</span>
-			<a href="admin.php?do=logout">стать человеком</a>
-		</div>
-		<div class="content">
-			<div class="tools">
-				<a href="admin.php?do=addTrack">
-					<button>Добавить трек</button>
-				</a>
-				<a href="admin.php?do=addRemix">
-					<button>Добавить ремикс</button>
-				</a>
+?>
+
+<?php if ( isset ($_SESSION['logged_user']) ) : ?>
+	<?php
+
+	$admin = '
+		<div class="main-panel">
+			<div class="header">
+				<span>Панель администратора</span>
+				<a href="admin.php?do=logout">стать человеком</a>
+			</div>
+			<div class="content">
+				<div class="tools">
+					<a href="admin.php?do=addTrack">
+						<button>Добавить трек</button>
+					</a>
+					<a href="admin.php?do=addRemix">
+						<button>Добавить ремикс</button>
+					</a>
+				</div>
 			</div>
 		</div>
-	</div>
-';
+	';
 
 
 
-$save_admin = $admin;
-$help = null;
+	$save_admin = $admin;
+	$help = null;
 
-session_start();
- 
-if(!$_SESSION['admin']){
-	 header("Location: login.php");
-	 exit;
-}
+	if($_GET['do'] == ''){
+		 header("Location: admin.php?do=home");
+	}
 
-if($_GET['do'] == ''){
-	 header("Location: admin.php?do=home");
-}
+	if($_GET['do'] == 'logout'){
+		unset($_SESSION['admin']);
+		session_destroy();
+		header("Location: login.php");
+	}
 
-if($_GET['do'] == 'logout'){
-	unset($_SESSION['admin']);
-	session_destroy();
-	header("Location: login.php");
-}
+	include 'admin_need/add_track.php';
 
-include 'admin_need/add_track.php';
+	if($_GET['do'] == 'addTrack'){
+		$save_admin = null;
+		$help = $add_track;
+	}
 
-if($_GET['do'] == 'addTrack'){
-	$save_admin = null;
-	$help = $add_track;
-}
+	include 'admin_need/add_remix.php';
 
-include 'admin_need/add_remix.php';
+	if($_GET['do'] == 'addRemix'){
+		$save_admin = null;
+		$help = $add_remix;
+	}
 
-if($_GET['do'] == 'addRemix'){
-	$save_admin = null;
-	$help = $add_remix;
-}
+	?>
+	<head>
+		<title>Админка</title>
+		<link rel="stylesheet" href="public/css/admin.css">
+	</head>
 
-?>
-<head>
-	<title>Админка</title>
-	<link rel="stylesheet" href="public/css/admin.css">
-</head>
+	<?php
 
-<?php
+	echo $save_admin;
+	echo $help;
 
-echo $save_admin;
-echo $help;
-
-?>
+	?>
+<?php else : ?>
+	<?php header("Location: login.php"); ?>
+<?php endif; ?>

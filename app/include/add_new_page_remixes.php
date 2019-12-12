@@ -3,7 +3,7 @@
 $new_music_page = '<?php
 	include "../insert/header.php";
 
-	$result = get_found_music($link, "remix", "'.$name.'", "'.$autor.'");
+	$result = get_found_music("remix", "'.$name.'", "'.$autor.'");
 
 ?>
 
