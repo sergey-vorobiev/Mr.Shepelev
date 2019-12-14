@@ -5,6 +5,7 @@ require_once 'app/header.php';
 ?>
 
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Mr. Shepelev</title>
 	<link rel="stylesheet" href="public/css/mr_shepelev.css">
 </head>
@@ -59,6 +60,7 @@ require_once 'app/header.php';
 	</div>
 	<audio id="music"></audio>
 
+	<script src="public/js/header.js"></script>
 	<script src="public/js/mr-shepelev.js"></script>
 
 	<?php

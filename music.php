@@ -33,6 +33,7 @@
 </div>
 <audio id="music"></audio>
 
+<script src="public/js/header.js"></script>
 <script src="public/js/music.js"></script>
 
 <?php 

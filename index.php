@@ -17,6 +17,7 @@
 			<p>Наслаждайтесь, крутите пластинки и будьте счастливы</p>
 		</div>
 	</div>
+	<script src="public/js/header.js"></script>
 
 <?php 
 

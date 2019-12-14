@@ -11,8 +11,8 @@
 		<div class="main-time-line">
 			<div class="info-music">
 				<div class="left-content">
-					<a id="audioplayer_title" href="#">Footer Lorem</a>
-					<a id="audioplayer_autor" href="#">Mr.Shepelev</a>
+					<a id="audioplayer_title" href="#" target="_blank">0x</a>
+					<a id="audioplayer_autor" href="MrShepelev.php" target="_blank">Mr.Shepelev</a>
 				</div>
 			</div>
 			<div class="audio-line-info">

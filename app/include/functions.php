@@ -45,11 +45,11 @@ function addRemix($link, $remix_on, $name, $autor, $genre, $name_music_in_folder
 
 }
 
-// function listening(){
+// function listening($table, $id){
 
 // 	// засчитывание прослушивания
 
-// 	$listening = mysqli_query($link, "UPDATE core_config_data SET value = 'Ваше значение' WHERE config_id = '81';")
+// 	R::exec( "UPDATE $table SET num_plays = num_plays + 1 WHERE id = $id;" );
 
 // }
 

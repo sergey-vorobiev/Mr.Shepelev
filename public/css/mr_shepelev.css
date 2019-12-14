@@ -132,3 +132,76 @@
 .audioplayer_autor{
 	display: none;
 }
+
+@media (max-width: 1100px){
+	.container-autor{
+		height: 350px;
+		flex-direction: column;
+	}
+	.container-group-one{
+		height: 250px;
+	}
+	.container-group-two{
+		justify-content: flex-start;
+	}
+	.container-group:first-child{
+		width: 100%;
+		flex-direction: initial;
+	}
+	.container-group{
+		width: 100%;
+	}
+	.curious-main-info{
+		padding-top: 15px;
+	}
+	.curious-info{
+		width: auto;
+	}
+	.follow{
+		width: 120px;
+		padding-top: 14px;
+		padding-left: 30px;
+	}
+}
+@media (max-width: 900px){
+	.container-group-one{
+		height: auto;
+	}
+	.container-group-one{
+		width: 100%;
+	}
+	.img-autor{
+		width: 100%;
+		height: 600px !important;
+	}
+}
+@media (max-width: 600px){
+	.container-autor{
+		height: 470px;
+		padding: 40px 10px;
+	}
+	.container-group-one{
+		width: 100%;
+		flex-direction: column !important;
+	}
+	.img-autor{
+		max-width: 94%;
+		height: 600px !important;
+		background-position: center;
+	}
+	.main-info .name{
+		margin-top: 15px;
+	}
+	.tags{
+		margin-top: 15px;
+	}
+	.container-group-two{
+		flex-direction: column;
+	}
+	.curious-main-info{
+		padding-left: 20px;
+	}
+	.follow{
+		padding-left: 20px;
+	}
+}

@@ -18,6 +18,11 @@ require '../../app/include/functions.php';
 					<b>Mr. Shepelev</b>
 			</div>
 		</a>
+		<div class="section">
+			<a href="#" class="menu-btn">
+				<span></span>
+			</a>
+		</div>
 		<div class="menu">
 			<ul>
 				<li><a href="../../music.php">Музыка</a></li>
@@ -25,3 +30,4 @@ require '../../app/include/functions.php';
 			</ul>
 		</div>
 	</div>
+	<script src="../../public/js/header.js"></script>
